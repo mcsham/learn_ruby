@@ -5,4 +5,3 @@ end
 def ctof (celsius)
   celsius * 9 / 5.0 + 32
 end
-
