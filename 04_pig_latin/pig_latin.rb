@@ -1,9 +1,14 @@
-def translate(word)
-    while not (word[0] =~ /[aeiouy]/)
-      tmp_word = word[1..-1]
-      tmp_word << word[0]
-      word = tmp_word
+def translate(text) # спаси и сохрани, аминь (Индус стайл)
+  text.split(' ').map do |word|
+    unless word.empty?
+      until (word[0] =~ /[aeioy]/)
+        p word
+        char = word[0]
+        word[0] = ''
+        word << char
+      end
+    word << "ay"
     end
-  word << "ay"
+    end.join(' ')
 end
 
