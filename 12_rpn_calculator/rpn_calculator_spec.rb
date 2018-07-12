@@ -48,7 +48,7 @@ describe RPNCalculator do
     calculator.push(2)
     calculator.push(3)
     calculator.plus
-    expect(calculator.value).to eq(5)
+  expect(calculator.value).to eq(5)
   end
 
   it "adds three numbers" do
