@@ -2,8 +2,8 @@ class RPNCalculator
   attr_reader :value
 
   def initialize
-    @elem ||= []
-    @value ||= 0
+    @elem = []
+    @value = 0
   end
 
   def push(val)

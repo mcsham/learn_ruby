@@ -7,7 +7,7 @@ class XmlDocument
 
   def method_missing(symbol, *args)
     @level += 1
-    values ||= {}
+    values = {}
     name = symbol.id2name
     values[name] = if args.empty?
                      block_given? ? yield : nil

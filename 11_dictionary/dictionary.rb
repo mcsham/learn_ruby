@@ -2,14 +2,14 @@ class Dictionary
   attr_reader :entries
 
   def initialize
-    @entries ||= {}
+    @entries = {}
   end
 
   def add(hash)
     if hash.is_a?(Hash) # захист від дурня
       @entries.merge!(hash)
     else
-      @entries[hash] ||= nil
+      @entries[hash] = nil
     end
   end
 
@@ -25,9 +25,9 @@ class Dictionary
     @entries.select { |k, _| k =~ /.*#{regex}.*/ }
   end
 
-  def printable # імхо костиль ))
-    string = ''
-    @entries.sort.to_h.each_pair { |k, v| string << "[#{k}] \"#{v}\"\n" }
-    string.chomp
+  def printable
+    @entries.sort.reduce('') do |result, val|
+      result << "[#{val[0]}] \"#{val[1]}\"\n"
+    end.chomp
   end
 end
