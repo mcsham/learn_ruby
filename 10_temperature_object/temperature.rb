@@ -19,22 +19,27 @@ class Temperature
   end
 
   def self.from_celsius(celsius)
-    Temperature.new c: celsius
+    # Temperature.new c: celsius
+    new c: celsius
   end
 
   def self.from_fahrenheit(fahrenheit)
-    Temperature.new f: fahrenheit
+    # Temperature.new f: fahrenheit
+    new f: fahrenheit
   end
 end
 
 class Celsius < Temperature
   def initialize(param)
-    self.in_celsius = param if param
+    # self.in_celsius = param if param
+    super(c: param)
   end
+
 end
 
 class Fahrenheit < Temperature
   def initialize(param)
-    self.in_fahrenheit = param if param
+    # self.in_fahrenheit = param if param
+    super(f: param)
   end
 end
